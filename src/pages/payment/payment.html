@@ -1,0 +1,103 @@
+<ion-header no-border>
+  <ion-toolbar class="shadow-3">
+    <ion-icon name="arrow-back" color="primary" (click)="back()"></ion-icon>
+    <div class="logo" text-center> 
+     
+
+      <img src="assets/logo.jpeg" width="40px" height="40px">
+    <ion-title color="dark"><b>my<ion-note color="primary">Golf</ion-note>2u</b></ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+ 
+  <div class="main-content bg-white">
+   
+    <div padding>
+      <ion-list radio-group [(ngModel)]="paymentMethod" (ionChange)="groupChanged($event)">
+        <ion-list-header>
+          Payment Method
+        </ion-list-header>
+        <ion-row>
+          <ion-col col-12 col-sm-12 col-md-6 col-lg-4>
+            <ion-item no-lines>
+              <img  class="shadow-3" item-left src="https://img.icons8.com/cute-clipart/28/000000/box.png"/>
+              <ion-label><b>Online Banking</b></ion-label>
+              <ion-radio value="onlineBanking"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col col-12 col-sm-12 col-md-6 col-lg-4>
+            <ion-item no-lines>
+              <img class="shadow-3" item-left src="https://img.icons8.com/cute-clipart/28/000000/mastercard.png"/>
+              <ion-label><b>Credit / Debit Card</b></ion-label>
+              <ion-radio value="creditCard"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col col-12 col-sm-12 col-md-6 col-lg-4>
+            <ion-item no-lines>
+              <img class="shadow-3" item-left src="https://img.icons8.com/cute-clipart/28/000000/paypal.png"/>
+              <ion-label><b>PayPal</b></ion-label>
+              <ion-radio value="paypal"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col col-12 col-sm-12 col-md-6 col-lg-4>
+            <ion-item no-lines>
+              <img class="shadow-3" item-left src="https://img.icons8.com/cute-clipart/28/000000/wallet.png"/>
+              <ion-label><b>E-Wallet</b></ion-label>
+              <ion-radio value="e-wallet"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col col-12 col-sm-12 col-md-6 col-lg-4>
+            <ion-item no-lines>
+              <img class="shadow-3" item-left src="https://img.icons8.com/cotton/28/000000/mobile-payment--v3.png"/>
+              <ion-label><b>Charge to Account</b>
+                  <span style="font-size: 10px;"><i>(Requires Club Confirmation)</i></span>
+                </ion-label>
+              <ion-radio value="chargeAccount"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+
+      <ion-row class="amount_paid">
+        <ion-col align-self-center>
+          <ion-item no-lines style="margin: -15px 0 0 0;">
+            <ion-label color="medium">Amount to be Paid</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col align-self-center>
+          <ion-segment
+            [(ngModel)]="amountPaid"
+            color="primary"
+            (ionChange)="amountSegmentChanged($event)">
+            <ion-segment-button value="full">
+              Full
+            </ion-segment-button>
+            <ion-segment-button value="deposit">
+              Deposit
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+      </ion-row>
+
+    <ion-row>
+        <ion-col>
+            <ion-item no-lines>
+                <ion-label color="medium" style="line-height: 1.5em;">Includes 4 Player(s) with Green / Buggy Fees / Caddy
+                    Fees / Insurance / Taxes</ion-label>
+            </ion-item>
+        </ion-col>
+        <ion-col>
+            <ion-item text-right no-lines>
+                <ion-label>RM 593.60</ion-label>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+
+    <div class="pay_now" padding text-center>
+        <button ion-button color="warning" round class="shadow-3" (click)="openPage()">Pay Now</button>
+    </div>
+    </div>
+    <div style="height: 65px;"></div>
+  </div>
+</ion-content>

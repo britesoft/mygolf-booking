@@ -1,0 +1,125 @@
+<ion-header no-border>
+    <ion-toolbar class="shadow-3">
+      <ion-icon name="arrow-back" color="primary" (click)="back()"></ion-icon>
+      <div class="logo" text-center>
+        <img src="assets/logo.jpeg" width="40px" height="40px">
+      <ion-title color="dark"><b>my<ion-note color="primary">Golf</ion-note>2u</b></ion-title>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+<ion-content padding margin-top>
+  <div class="main-content-checkin">
+
+    <!-- <div padding>
+      
+      <ion-item end>
+         <ion-label color="warning">Check-in for all players</ion-label>
+         <ion-checkbox item-right></ion-checkbox>
+        </ion-item>
+
+    </div> -->
+
+    <ion-row>
+        <ion-col col-lg-4 col-md-6 col-sm-12 col-12>
+            <ion-card  class="item-card">
+                    <ion-col col-lg-3 col-md-3 col-sm-2 col-3>
+                        <div class="img" float-right>
+                            <img src="assets/imgs/avt2.jpg">
+                        </div>
+                    </ion-col>
+                    <ion-col col-lg-9 col-md-9 col-sm-10 col-9>
+                        <ion-item no-lines>
+                        <ion-label padding-left color="success">Fazel NahgShineh (# 11)
+                        </ion-label><ion-checkbox item-right></ion-checkbox>
+                        </ion-item>
+                    </ion-col>
+                </ion-card>
+            </ion-col>
+            <ion-col col-lg-4 col-md-6 col-sm-12 col-12>
+            <ion-card  class="item-card">
+                    <ion-col col-lg-3 col-md-3 col-sm-2 col-3>
+                        <div class="img" float-right>
+                            <img src="assets/imgs/avt3.jpg">
+                        </div>
+                    </ion-col>
+                    <ion-col col-lg-9 col-md-9 col-sm-10 col-9>
+                        <ion-item no-lines>
+                        <ion-label padding-left color="success">Fazel NahgShineh (# 11)
+                        </ion-label><ion-checkbox item-right></ion-checkbox>
+                        </ion-item>
+                    </ion-col>
+                </ion-card>
+            </ion-col>
+            <ion-col col-lg-4 col-md-6 col-sm-12 col-12>
+            <ion-card  class="item-card">
+                <ion-col col-lg-3 col-md-3 col-sm-2 col-3>
+                    <div class="img" float-right>
+                        <img src="assets/imgs/avt4.jpg">
+                    </div>
+                </ion-col>
+                <ion-col col-lg-9 col-md-9 col-sm-10 col-9>
+                    <ion-item no-lines>
+                    <ion-label padding-left color="success">Fazel NahgShineh (# 11)
+                    </ion-label><ion-checkbox item-right></ion-checkbox>
+                    </ion-item>
+                </ion-col>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+  
+
+      <div>
+        <ion-list radio-group [(ngModel)]="arrived" (ionChange)="groupChanged($event)">
+        <ion-row>
+          <ion-col col-lg-6 col-md-6 col-sm-12 col-12 align-self-center >
+            <ion-item no-lines text-center class="checkin-item" [ngClass]="{ selected: arrived == 'arrived'}">
+              <ion-label class="item-checkin-label"><b>I/We have arrived at the Club</b></ion-label>
+              <ion-radio value="arrived"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col col-lg-6 col-md-6 col-sm-12 col-12 align-self-center >
+            <ion-item no-lines text-center class="checkin-item" [ngClass]="{ selected: arrived == 'ontheway'}">
+              <ion-label class="item-checkin-label"><b>On the way, ETA (in mins)</b></ion-label>
+              <ion-radio value="ontheway"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col align-self-center>
+            <ion-item no-lines>
+              <ion-label color="dark"><b style="position: relative;top:-4px;">Auto checkin</b></ion-label>
+              <ion-checkbox [(ngModel)]="autoCheckin" (ionChange)="checkinAuto($event)"></ion-checkbox>
+            </ion-item>
+          </ion-col>
+          <ion-col align-self-center>
+           <ion-row>
+          <ion-col text-right col-4 align-self-center>
+            <ion-item text-right no-lines>
+              <button ion-button color="light" (click)="remove()" class="shadow-1">
+                <ion-icon style="color: #f54141;" name="remove-outline"></ion-icon>
+              </button>
+            </ion-item>
+          </ion-col>
+          <ion-col col-4 text-center align-self-center>
+            <ion-input type="number" placeholder="1" [(ngModel)]="checkin"></ion-input>
+          </ion-col>
+          <ion-col text-left col-4 align-self-center>
+            <ion-item text-left no-lines>
+              <button ion-button color="light" (click)="add()" class="shadow-1">
+                <ion-icon style="color: #0ecf38;" name="add"></ion-icon>
+              </button>
+            </ion-item>
+          </ion-col>
+          </ion-row>
+        </ion-col>
+        </ion-row>
+       
+      </ion-list>
+      <div class="check-in" text-center padding-bottom>
+        <button ion-button round color="success" [disabled]="!arrived" (click)="openPage('CalendarPage')">check-in</button>
+    </div>
+      </div>
+      <div style="height: 100px;"></div>
+  </div>
+</ion-content>

@@ -1,0 +1,134 @@
+<ion-header no-border>
+    <ion-toolbar class="shadow-3">
+      <div class="logo" text-center>
+        <img src="assets/logo.jpeg" width="40px" height="40px">
+      <ion-title color="dark"><b>my<ion-note color="primary">Golf</ion-note>2u</b></ion-title>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content padding>
+    <div class="main-content">
+        <ion-row text-center class="picklist shadow-2">
+            <ion-col col-12>
+                <ion-item no-lines class="picklist">
+                    <ion-label padding-horizontal color="dark"><b>Select Player</b></ion-label>
+                </ion-item>
+            </ion-col>
+            <ion-col col-12>
+                <div>
+                    <ion-segment [(ngModel)]="player">
+                        <ion-segment-button value="friends">
+                            Friends
+                        </ion-segment-button>
+                        <ion-segment-button value="all">
+                            All Players
+                        </ion-segment-button>
+                        <ion-segment-button value="non-mg2u">
+                            Non-MG2U Players
+                        </ion-segment-button>
+                    </ion-segment>
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <div class="shadow-1">
+            <ion-searchbar [(ngModel)]="search" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)"
+                (ionCancel)="onCancel($event)"></ion-searchbar>
+        </div>
+
+        <div>
+            <ion-item no-lines>
+                <ion-label padding-horizontal>Friend List</ion-label>
+            </ion-item>
+
+            <ion-row>
+                <ion-col col-lg-4 col-md-6 col-sm-12 col-12>
+                   <ion-card  class="item-card">
+                        <ion-col col-lg-3 col-md-3 col-sm-2 col-3>
+                            <div class="img" float-right>
+                                <img src="assets/imgs/avt2.jpg">
+                            </div>
+                        </ion-col>
+                        <ion-col col-lg-9 col-md-9 col-sm-10 col-9>
+                            <ion-item no-lines>
+                                <ion-label padding-left color="success">Fazel NahgShineh (# 11)
+                                </ion-label>
+                                <ion-icon item-right name="open-outline"></ion-icon>
+                            </ion-item>
+                        </ion-col>
+                    </ion-card>
+                </ion-col>
+                <ion-col col-lg-4 col-md-6 col-sm-12 col-12>
+                   <ion-card  class="item-card">
+                        <ion-col col-lg-3 col-md-3 col-sm-2 col-3>
+                            <div class="img" float-right>
+                                <img src="assets/imgs/avt4.jpg">
+                            </div>
+                        </ion-col>
+                        <ion-col col-lg-9 col-md-9 col-sm-10 col-9>
+                            <ion-item no-lines>
+                                <ion-label padding-left color="success">John wick (# 13)
+                                </ion-label>
+                                <ion-icon item-right name="open-outline"></ion-icon>
+                            </ion-item>
+                        </ion-col>
+                    </ion-card>
+                </ion-col>
+                <ion-col col-lg-4 col-md-6 col-sm-12 col-12>
+                   <ion-card  class="item-card">
+                        <ion-col col-lg-3 col-md-3 col-sm-2 col-3>
+                            <div class="img" float-right>
+                                <img src="assets/imgs/avt7.jpg">
+                            </div>
+                        </ion-col>
+                        <ion-col col-lg-9 col-md-9 col-sm-10 col-9>
+                            <ion-item no-lines>
+                                <ion-label padding-left color="success">Tom Cruise (# 14)
+                                </ion-label>
+                                <ion-icon item-right name="open-outline"></ion-icon>
+                            </ion-item>
+                        </ion-col>
+                    </ion-card>
+                </ion-col>
+                <ion-col col-lg-4 col-md-6 col-sm-12 col-12>
+                   <ion-card  class="item-card">
+                        <ion-col col-lg-3 col-md-3 col-sm-2 col-3>
+                            <div class="img" float-right>
+                                <img src="assets/imgs/avt6.jpg">
+                            </div>
+                        </ion-col>
+                        <ion-col col-lg-9 col-md-9 col-sm-10 col-9>
+                            <ion-item no-lines>
+                                <ion-label padding-left color="success">Albert (# 17)
+                                </ion-label>
+                                <ion-icon item-right name="open-outline"></ion-icon>
+                            </ion-item>
+                        </ion-col>
+                    </ion-card>
+                </ion-col>
+                <ion-col col-lg-4 col-md-6 col-sm-12 col-12>
+                   <ion-card  class="item-card">
+                        <ion-col col-lg-3 col-md-3 col-sm-2 col-3>
+                            <div class="img" float-right>
+                                <img src="assets/imgs/avt8.jpg">
+                            </div>
+                        </ion-col>
+                        <ion-col col-lg-9 col-md-9 col-sm-10 col-9>
+                            <ion-item no-lines>
+                                <ion-label padding-left color="success">Ronaldo (# 20)
+                                </ion-label>
+                                <ion-icon item-right name="open-outline"></ion-icon>
+                            </ion-item>
+                        </ion-col>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+
+            <div class="add_me" text-center>
+                <button ion-button round color="secondary" class="shadow-3">Add me</button>
+                <button ion-button round color="danger" class="shadow-3">Cancel</button>
+            </div>
+        </div>
+        <div style="height: 60px;"></div>
+    </div>
+</ion-content>

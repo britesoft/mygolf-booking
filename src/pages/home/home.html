@@ -1,0 +1,99 @@
+<ion-header no-border>
+    <ion-toolbar class="shadow-3">
+      <div class="logo" text-center>
+        <img src="assets/logo.jpeg" width="40px" height="40px">
+      <ion-title color="dark"><b>my<ion-note color="primary">Golf</ion-note>2u</b></ion-title>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+<ion-content padding class="scroller">
+    <div class=" bg-white shadow-1 heading-content" padding-top>
+        <ion-row text-center>
+            <ion-col col-3 col-sm-4 col-md-5 col-lg-5>
+                <div class="img" float-right>
+                    <img src="assets/imgs/avt4.jpg" width="70px" height="70px">
+                </div>
+            </ion-col>
+            <ion-col col-9 col-sm-8 col-md-7 col-lg-7>
+                <ion-item no-lines>
+                    <ion-label>
+                        <h1><span style="margin: 0 5px 0 0;" class="flag flag-us"></span><b>Fazel NahgShineh (# 11)</b></h1>
+                        <p>MG2U Index:<span style="color: #8AC143;">5.7</span><span class="player_score"> 11cp 9
+                                (TGCF)</span></p>
+                        <p>MG2U Index:<span style="color: #8AC143;">5.7</span><span class="player_score"> 11cp 9
+                                (TGCF)</span></p>
+                    </ion-label>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </div>
+
+    <ion-grid class="service_content">
+        <ion-row text-center>
+
+            <ion-col col-6 col-sm-6 col-md-4 col-lg-4>
+                <div class="main">
+                    <div class=" main content shadow-2">
+                        <ion-icon name="stopwatch-outline"></ion-icon>
+                    </div>
+                </div>
+                <p class="properties">Booking & Registrations</p>
+            </ion-col>
+
+            <ion-col col-6 col-sm-6 col-md-4 col-lg-4>
+                <div class="main" id="game">
+                    <div class=" main content shadow-2">
+                        <ion-icon name="albums-outline"></ion-icon>
+                    </div>
+                </div>
+                <p class="properties">New Game</p>
+            </ion-col>
+
+            <ion-col col-6 col-sm-6 col-md-4 col-lg-4>
+                <div class="main" id="tot">
+                    <div class=" main content shadow-2">
+                        <ion-icon name="albums"></ion-icon>
+                    </div>
+                </div>
+                <p class="properties">Tournaments</p>
+            </ion-col>
+
+            <ion-col col-6 col-sm-6 col-md-4 col-lg-4>
+                <div class="main">
+                    <div class=" main content shadow-2" (click)="openPage('CheckInPage')">
+                        <ion-icon name="clipboard-outline"></ion-icon>
+                    </div>
+                </div>
+                <p class="properties">MG2U Index</p>
+            </ion-col>
+
+            <ion-col col-6 col-sm-6 col-md-4 col-lg-4>
+                <div class="main" (click)="openPage('PlayerOptionsPage')">
+                    <div class="main content shadow-2">
+                        <ion-icon name="clipboard"></ion-icon>
+                    </div>
+                </div>
+                <p class="properties">Scorecards</p>
+            </ion-col>
+
+            <ion-col col-6 col-sm-6 col-md-4 col-lg-4>
+                <div class="main" (click)="openPage('AddPlayersPage')">
+                    <div class="main content shadow-2">
+                        <ion-icon name="people"></ion-icon>
+                    </div>
+                </div>
+                <p class="properties">Friends</p>
+            </ion-col>
+
+            <ion-col col-6 col-sm-6 col-md-4 col-lg-4>
+                <div class="main" (click)="openPage('CalendarPage')">
+                    <div class="main content shadow-2">
+                        <ion-icon name="pie-outline"></ion-icon>
+                    </div>
+                </div>
+                <p class="properties">Performance</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div style="height: 60px;"></div>
+</ion-content>

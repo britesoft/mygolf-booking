@@ -1,0 +1,624 @@
+<!-- Generated template for the SlotsDetailComponent component -->
+
+<ion-header no-border>
+  <ion-toolbar class="shadow-3">
+    <ion-item class="item-logo" no-lines style="width: 100%;">
+      <ion-icon item-left name="md-arrow-round-back" color="primary" (click)="back()"></ion-icon>
+
+      <ion-label class="title" color="dark"><b>Amverton Cove Golf & Island</b>
+        <h4 style=" text-align:center;margin:5px 0px 5px 0;color: #5fdf4e; font-weight: 800;"><b>Amverton 1 - 9</b></h4>
+      </ion-label>
+      <ion-label text-right item-right color="medium">Total price: <b>IDR 123,455,890</b></ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-row>
+    <ion-col col-12 col-sm-12 col-md-12 col-lg-6>
+      <div class="shadow-3 main-content">
+
+        <div class="players_count">
+          <div class="shadow-3 basic_detail">
+            <span style="position: relative;top: 7px;"><b>Basic detail</b></span>
+          </div>
+          <ion-row>
+            <ion-col col-6 col-sm-6 col-md-7 col-lg-7 text-center align-self-start>
+              <ion-item no-lines>
+                <ion-label color="medium"><b>Tea Time 07:20</b></ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col col-6 col-sm-6 col-md-5 col-lg-5 text-center align-self-start>
+              <ion-item no-lines>
+                <ion-label color="medium"><b>Friday 24 July 2020</b></ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6 col-sm-6 col-md-7 col-lg-7 text-center align-self-start>
+              <ion-item no-lines>
+                <ion-label color="medium"><b>How many Golfers Playing?</b></ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col col-6 col-sm-6 col-md-5 col-lg-5 align-self-start>
+              <ion-row>
+                <ion-col col-4 col-sm-4 col-md-3 col-lg-3 align-self-start>
+                  <ion-item no-lines text-right>
+                    <button ion-button color="light" (click)="remove('booking')" class="shadow-1">
+                      <ion-icon style="color: #f54141;" name="remove"></ion-icon>
+                    </button>
+                  </ion-item>
+                </ion-col>
+                <ion-col col-4 col-sm-4 col-md-2 col-lg-2 align-self-start>
+                  <ion-input type="number" placeholder="1" [(ngModel)]="bookings"></ion-input>
+                </ion-col>
+                <ion-col col-4 col-sm-4 col-md-6 col-lg-6 align-self-start>
+                  <ion-item no-lines>
+                    <button ion-button color="light" (click)="add('booking')" class="shadow-1">
+                      <ion-icon style="color: #0ecf38;" name="add"></ion-icon>
+                    </button>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <div class="player_golf_holes">
+          <ion-row>
+            <ion-col col-6 col-sm-6 col-md-7 col-lg-7 align-self-start>
+              <ion-item no-lines>
+                <ion-label color="medium"><b>Playing 9 or 18 holes?</b></ion-label>
+              </ion-item>
+
+            </ion-col>
+            <ion-col col-6 col-sm-6 col-md-5 col-lg-5 align-self-center>
+              <ion-segment [(ngModel)]="golfHoles" color="primary" (ionChange)="segmentChanged($event)">
+                <ion-segment-button value="9">
+                  9 <ion-icon *ngIf="golfHoles == '9'" name="checkmark"></ion-icon>
+                </ion-segment-button>
+                <ion-segment-button value="18">
+                  18 <ion-icon *ngIf="golfHoles == '18'" name="checkmark"></ion-icon>
+                </ion-segment-button>
+              </ion-segment>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <div class="books_someone">
+          <ion-row>
+            <ion-col col-7 align-self-start>
+              <ion-item (click)="toggle($event)" no-lines>
+                <ion-label color="medium"><b>Are you booking for someone else ?</b></ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col col-5 align-self-start>
+              <ion-item no-lines>
+                <ion-toggle [(ngModel)]="bookForOthers"></ion-toggle>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-item no-lines text-right>
+            <ion-label>
+              <p>
+                <ion-note color="secondary"><b>See Full Slot Details</b></ion-note>
+              </p>
+            </ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </ion-col>
+
+    <ion-col col-12 col-sm-12 col-md-12 col-lg-6 class="booking_pricig">
+      <!-- <div padding class="shadow-3 main-content add_member">
+              <div class="shadow-3 basic_detail">
+                <span style="position: relative;top: 7px;"><b>Players</b></span>
+             </div>
+              <div padding-horizontal>
+                <ion-row justify-content-center text-center class="modal-margin">
+                    <ion-col class="col-lg-1 col-md-1 col-sm-2 col-3">
+                        <div class="img" >
+                          <img src="assets/imgs/avt2.jpg">
+                        </div>
+                    </ion-col>
+                    <ion-col col-lg-10 col-md-10 col-sm-10 col-9>
+                        <ion-item no-lines>
+                            <ion-label padding-left color="success">{{ playerName ? playerName: 'Add Member' }}
+                              <p *ngIf="playerName">No Promotion</p>
+                            </ion-label>
+                        </ion-item>
+                        <div>
+                          <ion-row>
+                          <ion-col col-6>
+                            <ion-input placeholder="Club M/Ship no." [(ngModel)]="playerName"></ion-input>
+                        </ion-col>
+                        <ion-col col-4>
+                          <ion-input placeholder="mg2u ID" [(ngModel)]="mg2uId"></ion-input>
+                        </ion-col>
+                        <ion-col col-2>
+                          <ion-icon style="margin-top: 20px;" color="danger" name="close"></ion-icon>
+                        </ion-col>
+                        </ion-row>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            
+                <div class="add_me" text-center>
+                    <button ion-button round *ngIf="togglebtn" color="secondary" class="shadow-3" (click)="addPlayerToggle()">Add me</button>
+                    <button ion-button round color="danger" class="shadow-3" (click)="toggleCancel()">Cancel</button>
+                </div>
+            </div>
+            </div> -->
+
+      <div padding class="shadow-3 main-content-buggies">
+
+        <div class="shadow-3 basic_detail">
+          <span style="position: relative;top: 7px;"><b>Booking & Pricing</b></span>
+        </div>
+
+
+        <div>
+
+          <ion-row justify-content-center text-center>
+            <ion-col col-lg-2 col-md-2 col-sm-3 col-3>
+              <div class="img_booking">
+                <img class="shadow-3" src="assets/imgs/avt2.jpg">
+              </div>
+            </ion-col>
+            <ion-col col-lg-4 col-md-4 col-sm-9 col-9>
+              <ion-row>
+                <ion-col col-6>
+                  <ion-input placeholder="Club M/Ship no." [(ngModel)]="playerName"></ion-input>
+                </ion-col>
+                <ion-col col-5>
+                  <ion-input placeholder="mg2u ID" [(ngModel)]="mg2uId"></ion-input>
+                </ion-col>
+                <ion-col col-1 class="player_icon_set">
+                  <ion-icon class="player_icon_search"  name="search"></ion-icon>
+                  <ion-icon class="player_icon_close"color="danger" name="close"></ion-icon>
+                </ion-col>
+                <ion-item no-lines style="padding:0%">
+                  <ion-label color="success">Helen Hunt #12345
+                  </ion-label>
+                </ion-item>
+              </ion-row>
+            </ion-col>
+
+            <ion-col col-6 col-sm-6 col-md-3 col-lg-3>
+              <ion-item no-lines>
+                <ion-label color="medium"><b>Visiotr Price</b></ion-label>
+              </ion-item>
+              <ion-item no-lines>
+                <ion-label color="medium"><b>Member Price</b></ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col col-6 col-sm-6 col-md-3 col-lg-3>
+              <ion-item no-lines style="padding: 0;">
+                <ion-label>
+                  <i><s><b>RM 510</b></s></i> <span style="color:rgb(74, 199, 43);"><b>RM 410</b></span>
+                </ion-label>
+              </ion-item>
+              <ion-item no-lines style="padding: 0;">
+                <ion-label>
+                  <i><s><b>RM 510</b></s></i> <span style="color:rgb(74, 199, 43);"><b>RM 410</b></span>
+                  <p style="font-size: 14px;">
+                    <ion-note color="secondary"><b>See other Packages!</b></ion-note>
+                  </p>
+                </ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <!-- <div class="add_me" text-center>
+                        <button ion-button round *ngIf="togglebtn" color="secondary" class="shadow-3" (click)="addPlayerToggle()">Add me</button>
+                        <button ion-button round color="danger" class="shadow-3" (click)="toggleCancel()">Cancel</button>
+                    </div> -->
+        </div>
+
+      </div>
+     
+    </ion-col>
+
+
+   
+  </ion-row>
+
+  <ion-row>
+
+    <ion-col col-12 col-sm-12 col-md-12 col-lg-6 align-self-start>
+
+      <div class="shadow-3 main-content-buggies see_package">
+        <div class="shadow-3 basic_detail-buggie">
+          <span style="position: relative;top: 7px;"><b>Buggies & Caddies</b></span>
+        </div>
+        <div>
+          <ion-row class="modal-margin" style="padding: 0; margin: 0;">
+            <ion-col text-center col-6 col-sm-6 col-md-6 col-lg-6 style="padding: 0; margin: 0;">
+              <ion-row style="padding: 0; margin: 0;">
+                <ion-col style="padding: 0; margin: 0;">
+                 
+                    <h5 style="position: relative; margin-top: 20px; color: gray;"><b>Buggies</b></h5>
+                  
+                </ion-col>
+               
+              </ion-row>
+              <ion-row style="padding: 0; margin: 0;">
+              
+                <ion-col text-right col-4>
+                  <ion-item text-right no-lines>
+                    <button ion-button color="light" (click)="remove('buggies')" class="shadow-1">
+                      <ion-icon style="color: #f54141;" name="remove-outline"></ion-icon>
+                    </button>
+                  </ion-item>
+                </ion-col>
+                <ion-col col-4>
+                  <ion-input type="number" placeholder="1" [(ngModel)]="buggies"></ion-input>
+                </ion-col>
+                <ion-col text-left col-4>
+                  <ion-item text-left no-lines>
+                    <button ion-button color="light" (click)="add('buggies')" class="shadow-1">
+                      <ion-icon style="color: #0ecf38;" name="add"></ion-icon>
+                    </button>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col text-center col-6 col-sm-6 col-md-6 col-lg-6 style="padding: 0; margin: 0;">
+              <ion-row style="padding: 0; margin: 0;">
+                <ion-col style="padding: 0; margin: 0;">
+                 
+                  <h5 style="position: relative; margin-top: 20px; color: gray;"><b>Caddies</b></h5>
+               
+              </ion-col>
+              </ion-row>
+              <ion-row style="padding: 0; margin: 0;">
+               
+                <ion-col text-right col-4>
+                  <ion-item text-right no-lines>
+                    <button ion-button color="light" (click)="remove('caddies')" class="shadow-1">
+                      <ion-icon style="color: #f54141;" name="remove-outline"></ion-icon>
+                    </button>
+                  </ion-item>
+                </ion-col>
+                <ion-col col-4>
+                  <ion-input type="number" placeholder="1" [(ngModel)]="caddies"></ion-input>
+                </ion-col>
+                <ion-col text-left col-4>
+                  <ion-item text-left no-lines>
+                    <button ion-button color="light" (click)="add('caddies')" class="shadow-1">
+                      <ion-icon style="color: #0ecf38;" name="add"></ion-icon>
+                    </button>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+
+             
+
+
+            <ion-col text-center col-12 col-sm-12 col-md-6 col-lg-6>
+              <ion-row>
+                <ion-col col-lg-3 col-md-3 col-sm-3 col-3 align-self-center>
+                  <div class="img_caddies">
+                    <img class="shadow-3" src="assets/imgs/avt6.jpg">
+                  </div>
+                </ion-col>
+                <ion-col col-lg-9 col-md-9 col-sm-9 col-9 align-self-center>
+                  <ion-item no-lines tappable (click)="collapseCard = !collapseCard">
+                    <ion-label padding-left color="success">John (# 23)
+                    </ion-label>
+                    <ion-icon item-right color="success" name="settings" (click)="openModal()"></ion-icon>
+                  </ion-item>
+                  <ion-item class="caddies-icons">
+                    <ion-row>
+                      <ion-col align-self-start *ngIf="buggies != ''">
+                        <img src="assets/caddie.svg" />
+                        <ion-note>{{buggies}}</ion-note>
+                      </ion-col>
+                      <ion-col align-self-start *ngIf="caddies != ''">
+                        <img src="assets/player.svg" />
+                        <ion-note>{{caddies}}</ion-note>
+                      </ion-col>
+                      <ion-col col-5 align-self-center>
+                        <img src="https://img.icons8.com/color/32/000000/driver.png" />
+                        <ion-note>{{driverValue == true ? 'Yes': 'No' }}</ion-note>
+                      </ion-col>
+                    </ion-row>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+             
+                <ion-col col-lg-3 col-md-3 col-sm-3 col-3>
+                  <div class="img_caddies">
+                    <img class="shadow-3" src="assets/imgs/avt5.jpg">
+                  </div>
+                </ion-col>
+                <ion-col col-lg-9 col-md-9 col-sm-9 col-9>
+                  <ion-item no-lines tappable (click)="collapseCard = !collapseCard">
+                    <ion-label padding-left color="success">John (# 23)
+                    </ion-label>
+                    <ion-icon item-right color="success" name="settings" (click)="openModal()"></ion-icon>
+                  </ion-item>
+                  <ion-item class="caddies-icons">
+                    <ion-row>
+                      <ion-col align-self-start *ngIf="buggies != ''">
+                        <img src="assets/caddie.svg" />
+                        <ion-note>{{buggies}}</ion-note>
+                      </ion-col>
+                      <ion-col align-self-start *ngIf="caddies != ''">
+                        <img src="assets/player.svg" />
+                        <ion-note>{{caddies}}</ion-note>
+                      </ion-col>
+                      <ion-col col-5 align-self-start>
+                        <img src="https://img.icons8.com/color/32/000000/driver.png" />
+                        <ion-note>{{driverValue == true ? 'Yes': 'No' }}</ion-note>
+                      </ion-col>
+                    </ion-row>
+
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+              <ion-col text-center col-12 col-sm-12 col-md-6 col-lg-6>
+              <ion-row justify-content-center text-center class="modal-margin">
+                <ion-col col-lg-3 col-md-3 col-sm-3 col-3>
+                  <div class="img_caddies">
+                    <img class="shadow-3" src="assets/imgs/avt2.jpg">
+                  </div>
+                </ion-col>
+                <ion-col col-lg-9 col-md-9 col-sm-9 col-9>
+                  <ion-item no-lines tappable (click)="collapseCard = !collapseCard">
+                    <ion-label padding-left color="success">John (# 23)
+                    </ion-label>
+                    <ion-icon item-right color="success" name="settings" (click)="openModal()"></ion-icon>
+                  </ion-item>
+                  <ion-item class="caddies-icons">
+                    <ion-row>
+                      <ion-col align-self-start *ngIf="buggies != ''">
+                        <img src="assets/caddie.svg" />
+                        <ion-note>{{buggies}}</ion-note>
+                      </ion-col>
+                      <ion-col align-self-start *ngIf="caddies != ''">
+                        <img src="assets/player.svg" />
+                        <ion-note>{{caddies}}</ion-note>
+                      </ion-col>
+                      <ion-col col-5 align-self-start>
+                        <img src="https://img.icons8.com/color/32/000000/driver.png" />
+                        <ion-note>{{driverValue == true ? 'Yes': 'No' }}</ion-note>
+                      </ion-col>
+                    </ion-row>
+                  </ion-item>
+                </ion-col>
+
+                <ion-col col-lg-3 col-md-3 col-sm-3 col-3>
+                  <div class="img_caddies">
+                    <img class="shadow-3" src="assets/imgs/avt3.jpg">
+                  </div>
+                </ion-col>
+                <ion-col col-lg-9 col-md-9 col-sm-9 col-9>
+                  <ion-item no-lines tappable (click)="collapseCard = !collapseCard">
+                    <ion-label padding-left color="success">John (# 23)
+                    </ion-label>
+                    <ion-icon item-right color="success" name="settings" (click)="openModal()"></ion-icon>
+                  </ion-item>
+                  <ion-item class="caddies-icons">
+                    <ion-row>
+                      <ion-col align-self-start *ngIf="buggies != ''">
+                        <img src="assets/caddie.svg" />
+                        <ion-note>{{buggies}}</ion-note>
+                      </ion-col>
+                      <ion-col align-self-start *ngIf="caddies != ''">
+                        <img src="assets/player.svg" />
+                        <ion-note>{{caddies}}</ion-note>
+                      </ion-col>
+                      <ion-col col-5 align-self-start>
+                        <img src="https://img.icons8.com/color/32/000000/driver.png" />
+                        <ion-note>{{driverValue == true ? 'Yes': 'No' }}</ion-note>
+                      </ion-col>
+                    </ion-row>
+
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+            </ion-col>
+          </ion-row>
+        </div>
+
+      </div>
+    </ion-col>
+
+    <ion-col col-12 col-sm-12 col-md-12 col-lg-6 class="booking_pricing">
+      <div padding class="shadow-3 main-content-buggies">
+        <div class="shadow-3 basic_detail">
+          <span style="position: relative;top: 7px;"><b>Players</b></span>
+        </div>
+        <!-- <div>
+            <ion-row class="modal-margin">
+              <ion-col text-center>
+               <h5 style="position: relative; top: 20px; color: gray;"><b>Buggies</b></h5>
+                <ion-row>
+                  <ion-col text-right col-4>
+                    <ion-item text-right no-lines>
+                      <button ion-button color="light" (click)="remove('buggies')" class="shadow-1">
+                        <ion-icon style="color: #f54141;" name="remove-outline"></ion-icon>
+                      </button>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col col-4>
+                    <ion-input type="number" placeholder="1" [(ngModel)]="buggies"></ion-input>
+                  </ion-col>
+                  <ion-col text-left col-4>
+                    <ion-item text-left no-lines>
+                      <button ion-button color="light" (click)="add('buggies')" class="shadow-1">
+                        <ion-icon style="color: #0ecf38;" name="add"></ion-icon>
+                      </button>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              
+              </ion-col>
+              <ion-col text-center>
+                <h5 style="position: relative; top: 20px; color: gray"><b>Caddies</b></h5>
+                <ion-row>
+                  <ion-col text-right col-4>
+                    <ion-item text-right no-lines>
+                      <button ion-button color="light" (click)="remove('caddies')" class="shadow-1">
+                        <ion-icon style="color: #f54141;" name="remove-outline"></ion-icon>
+                      </button>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col col-4>
+                    <ion-input type="number" placeholder="1" [(ngModel)]="caddies"></ion-input>
+                  </ion-col>
+                  <ion-col text-left col-4>
+                    <ion-item text-left no-lines>
+                      <button ion-button color="light" (click)="add('caddies')" class="shadow-1">
+                        <ion-icon style="color: #0ecf38;" name="add"></ion-icon>
+                      </button>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              
+              </ion-col>
+            </ion-row>
+          </div>
+          
+            <div>
+      
+              <ion-row justify-content-center text-center class="modal-margin">
+                  <ion-col class="col-lg-1 col-md-1  col-sm-2 col-3">
+                      <div class="img" >
+                          <img classsrc="assets/imgs/avt6.jpg">
+                      </div>
+                  </ion-col>
+                  <ion-col col-lg-10 col-md-10 col-sm-10 col-9>
+                      <ion-item no-lines tappable (click)="collapseCard = !collapseCard">
+                          <ion-label padding-left color="success">John (# 23)
+                            <p>Tap for more Options</p>
+                          </ion-label>
+                          <ion-icon item-right color="success" name="settings" (click)="openModal()"></ion-icon>
+                        </ion-item>
+                        <ion-item class="caddies-icons">
+                          <ion-row>
+                            <ion-col align-self-start *ngIf="buggies != ''">
+                              <img src="assets/caddie.svg"/>
+                              <ion-note >{{buggies}}</ion-note>
+                            </ion-col>
+                            <ion-col align-self-start *ngIf="caddies != ''">
+                              <img src="assets/player.svg"/>
+                              <ion-note>{{caddies}}</ion-note>
+                            </ion-col>
+                            <ion-col align-self-start>
+                              <img src="https://img.icons8.com/color/32/000000/driver.png"/>
+                              <ion-note>{{driverValue == true ? 'Yes': 'No' }}</ion-note>
+                            </ion-col>
+                          </ion-row>
+                      
+                      </ion-item>
+                  </ion-col>
+              </ion-row>
+          </div> -->
+        <div class="players_content">
+          <ion-row justify-content-center>
+            <ion-col col-lg-3 col-md-3 col-sm-3 col-3 align-self-start>
+              <div class="img_players" >
+                <img class="shadow-3" src="assets/imgs/avt5.jpg">
+              </div>
+            </ion-col>
+            <ion-col col-lg-9 col-md-9 col-sm-9 col-9 align-self-start>
+              <ion-item no-lines>
+                <ion-label padding-left color="success">John (#23)
+                </ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col col-lg-3 col-md-3 col-sm-3 col-3 align-self-start>
+              <div class="img_players">
+                <img class="shadow-3" src="assets/imgs/avt2.jpg">
+              </div>
+            </ion-col>
+            <ion-col col-lg-9 col-md-9 col-sm-9 col-9 align-self-start>
+              <div>
+                <ion-row>
+                  <ion-col col-6>
+                    <ion-input placeholder="Club M/Ship no." [(ngModel)]="playerName"></ion-input>
+                  </ion-col>
+                  <ion-col col-5>
+                    <ion-input placeholder="mg2u ID" [(ngModel)]="mg2uId"></ion-input>
+                  </ion-col>
+                  <ion-col col-1 style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <ion-icon style="margin:15px 0px 0 -10px;" name="search"></ion-icon>
+                    <ion-icon class="player_icon_close" color="danger" name="close"></ion-icon>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row justify-content-center>
+            <ion-col col-lg-3 col-md-3 col-sm-3 col-3 align-self-start>
+              <div class="img_players">
+                <img class="shadow-3" src="assets/imgs/avt3.jpg">
+              </div>
+            </ion-col>
+            <ion-col col-lg-9 col-md-9 col-sm-9 col-9 align-self-start>
+              <ion-row>
+                <ion-col col-6>
+                  <ion-input placeholder="Club M/Ship no." [(ngModel)]="playerName"></ion-input>
+                </ion-col>
+                <ion-col col-5>
+                  <ion-input placeholder="mg2u ID" [(ngModel)]="mg2uId"></ion-input>
+                </ion-col>
+                <ion-col col-1 style="display: flex; flex-direction: row; justify-content: space-between;">
+                  <ion-icon style="margin:15px 0px 0 -10px;" name="search"></ion-icon>
+                  <ion-icon class="player_icon_close" color="danger" name="close"></ion-icon>
+                </ion-col>
+                <!-- <ion-col col-1 class="player_icon_set">
+                  <ion-icon class="player_icon_search"  name="search"></ion-icon>
+                  <ion-icon class="player_icon_close"color="danger" name="close"></ion-icon>
+                </ion-col> -->
+              </ion-row>
+            </ion-col>
+            <ion-col col-lg-3 col-md-3 col-sm-3 col-3 align-self-start>
+              <div class="img_players">
+                <img class="shadow-3" src="assets/imgs/avt4.jpg">
+              </div>
+            </ion-col>
+            <ion-col col-lg-9 col-md-9 col-sm-9 col-9 align-self-start>
+              <div>
+                <ion-row>
+                  <ion-col col-6>
+                    <ion-input placeholder="Club M/Ship no." [(ngModel)]="playerName"></ion-input>
+                  </ion-col>
+                  <ion-col col-5>
+                    <ion-input placeholder="mg2u ID" [(ngModel)]="mg2uId"></ion-input>
+                  </ion-col>
+                  <ion-col col-1 style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <ion-icon style="margin:15px 0px 0 -10px;" name="search"></ion-icon>
+                    <ion-icon class="player_icon_close" color="danger" name="close"></ion-icon>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <!-- <div class="add_me" text-center>
+                  <button ion-button round *ngIf="togglebtn" color="secondary" class="shadow-3" (click)="addPlayerToggle()">Add me</button>
+                  <button ion-button round color="danger" class="shadow-3" (click)="toggleCancel()">Cancel</button>
+              </div> -->
+        </div>
+      </div>
+      <div padding text-right style="display: flex; flex-direction: row; justify-content: space-between;">
+        <ion-item (click)="nextPage()">
+          <ion-label color="primary">continue to payment</ion-label>
+        </ion-item>
+        <button item-right class="shadow-3 animate" ion-button round color="warning" (click)="nextPage()">
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </div>
+      <div style="height:100px;"></div>
+    </ion-col>
+
+  </ion-row>
+
+</ion-content>

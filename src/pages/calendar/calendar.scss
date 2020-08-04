@@ -1,0 +1,228 @@
+//calendar css
+.scroller {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;  // IE 10+
+  scrollbar-width: none;  // Firefox
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+  }
+}
+.cal-content{
+  ion-row{
+    margin:0;
+    padding: 0;
+    ion-col{
+      margin:0;
+      padding: 0;
+      ion-chip{
+        margin:0;
+        padding: 0;
+      }
+    }
+  }
+}
+ion-scroll {
+  height: 60px;
+  // overflow: hidden !important;
+  .chip {
+    transition: all .5s linear;
+    border-radius: 16px;
+    height: 32px;
+    font-size: 13px;
+    line-height: 32px;
+    background: none !important;
+    margin: auto !important;
+    border-bottom: rgb(0, 0, 0) !important;
+    ion-label{
+      padding: 0px 20px !important;
+    }
+  }
+  // .dayChip1{
+  //   background: linear-gradient(45deg, rgba(146,41,221,1), rgba(114,210,241,1) ) !important;
+  // }
+  // .dayChip2{
+  //   background: linear-gradient(45deg, rgb(41, 221, 110) , rgb(241, 144, 114) ) !important;
+  // }
+  // .dayChip3{
+  //   background: linear-gradient(45deg, rgb(221, 218, 41) , rgb(139, 241, 114) ) !important;
+  // }
+  // .dayChip4{
+  //   background: linear-gradient(45deg, rgb(44, 41, 221) , rgb(241, 207, 114) ) !important;
+  // }
+  // .dayChip5{
+  //   background: linear-gradient(45deg, rgb(221, 92, 41) , rgb(241, 233, 114) ) !important;
+  // }
+  .day-course{
+    height: 40px !important;
+    // width: max-content !important;
+  }
+  .daytime{
+    transition: all 2s;
+  }
+  .headerChip::-webkit-scrollbar {
+    display: none !important;
+  }
+  .cal_header{
+    border-bottom: 1px solid #ebe8e8;
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fdepositphotos.com%2Fstock-photos%2Fgolf.html&psig=AOvVaw1MRQtS_JCtBO4DK7BJq9NK&ust=1594301594877000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOi957PiveoCFQAAAAAdAAAAABAD') !important;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .headerChip {
+    -ms-overflow-style: none !important;  /* IE and Edge */
+    scrollbar-width: none  !important;  /* Firefox */
+  }
+  .chip:hover, .active{
+    transform: scale(1.05);
+    background: rgba(9, 81, 236, 0.8) !important;
+    ion-label{
+      color: white !important;
+    }
+  }
+}
+.slotSeacrhbar{
+  transition:  all .5s linear;
+  margin: 5px auto;
+  border-radius: 20px; width: 200px;
+}
+.slotSeacrhbar:hover{
+  width: 100% !important;
+}
+:host ::ng-deep {
+    .monthview-container {
+        height: auto !important;
+    }
+ 
+    .event-detail-container {
+        display: none;
+    }
+    .monthview-primary-with-event {
+        background-color: white !important;
+      }
+     
+      .monthview-selected {
+        background-color: var(--ion-color-success) !important;
+      }
+.indicator-container {
+  font-size: 10px;
+  padding-left: 0.5rem;
+  padding-bottom: 0.4rem;
+}
+.event-indicator {
+  // background: #579af1 !important;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  display: table-cell;
+}
+ 
+.with-event {
+  // background-color: #d3efca !important;
+  border-radius: 15px;
+}
+}
+.logo {
+    height: 50px;
+    img {
+      position: relative;
+      border-radius: 50%;
+      top: 10px;
+      left: -48px;
+    }
+    ion-title {
+      position: relative;
+      top: -38px;
+      left: 28px;
+      font-size: 24px;
+    }
+    ion-note{
+      font-size: 24px !important;
+    }
+  }
+  .toolbar-title-ios, .toolbar-title-md {
+    font-size: 2.4rem;
+  }
+  .today{
+    button{
+        border-radius: 8px;
+        margin: auto;
+    }
+}
+.content_select{
+  width: 100% !important;
+  ion-select{
+    width: 100% !important;
+    margin: auto;
+  }
+    border-radius: 6px;
+    // border: 1px solid #dedede;
+}
+.prop_heading{
+  color: #579af1;
+  padding: 0;margin-top: 2.7rem;;
+}
+.swiper-container{
+  height: 100%;
+}
+.event-detail-container[_ngcontent-c0]{
+  border: none !important;
+}
+
+.weekview-allday-content-wrapper{
+  height: 65px;
+}
+.monthview-primary-with-event[_ngcontent-c1] {
+  background-color: #f2f5f8 !important;
+  color: black !important;
+}
+.calendar-event-inner[_ngcontent-c0] {
+  background-color: #c6d2c248 !important;
+  color: black !important;
+}
+.dayview-primary-with-event[_ngcontent-c1] {
+  background-color: #ecf7f4;
+  color: rgb(0, 0, 0);
+}
+.sold_out {
+  color: rgba(247, 16, 16, 0.8) !important;
+  font-size:9px;
+  font-weight: bold;
+}
+.slot_in{
+  color: rgba(6, 179, 29, 0.5) !important;
+  font-size:9px;
+  font-weight: bold;
+}
+.hidetable {
+  display: none !important;
+}
+@media screen and (min-width:768px){
+    .input-calendar{
+        width:70px !important;
+        height: 42px !important;
+    }
+    .content_select{
+        width: 100% !important;  
+    }
+    .sold_out {
+      color: rgba(247, 16, 16, 0.8) !important;
+      font-size:13px !important;
+      font-weight: bold;
+    }
+    .slot_in{
+      color: rgba(6, 179, 29, 0.5) !important;
+      font-size:14px !important;
+      font-weight: bold;
+    }
+}
+@media screen and (max-width:580px){
+//   .prop_heading{ 
+//     margin: auto !important;
+//   h1{
+//    margin: auto !important;
+//    font-size: 16px;
+//  }
+// }
+}

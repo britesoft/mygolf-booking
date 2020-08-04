@@ -1,0 +1,76 @@
+.logo {
+  height: 50px;
+  img {
+    position: relative;
+    border-radius: 50%;
+    top: 10px;
+    left: -48px;
+  }
+  ion-title {
+    position: relative;
+    top: -38px;
+    left: 28px;
+    font-size: 24px;
+  }
+  ion-note{
+    font-size: 24px !important;
+  }
+}
+.toolbar-title-ios, .toolbar-title-md {
+  font-size: 2.4rem;
+}
+ion-content{
+  .searchbar-ios, .searchbar-md {
+      background: none;
+  }
+  .segment-ios ,.segment-md, .segment-button {
+    font-size: 10px !important;
+  }
+  overflow: scroll;
+  .main-content{
+    border-radius: 12px;
+    border: none;
+    .picklist{
+      background: #E3F7DC ;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+  }
+    .img> img{
+      padding: 0;
+      border-radius: 50%;
+  }
+
+ ion-icon{
+   position: relative;
+   top: 2px;
+   font-size: 20px;
+   font-weight: 800;
+ }
+
+ ion-segment{
+   ion-icon{
+    margin: -5px 0 0 0;
+   }
+ }
+ .book_now{
+   color: #000;
+   font-weight: 400;
+ }
+ .item-inner {
+  margin-top: 10px;
+ }
+
+  .item-card{
+  display: inline-flex;
+  padding:8px;
+  img{
+    height: 70px;
+    width: 70px
+  }
+ }
+
+ .card {
+  width: -webkit-fill-available !important;
+}
+}

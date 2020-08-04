@@ -1,0 +1,264 @@
+<ion-header no-border>
+  <ion-toolbar class="shadow-3">
+    <div class="logo" text-center>
+      <img src="assets/logo.jpeg" width="40px" height="40px">
+      <ion-title color="dark"><b>my<ion-note color="primary">Golf</ion-note>2u</b></ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding margin-top>
+  <!-- <ion-card class="shadow-3">
+    <ion-card-header tappable (click)="collapseCard = !collapseCard">
+      <ion-card-title>New Event</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngIf="!collapseCard">
+ 
+      <ion-item>
+        <ion-input type="text" placeholder="Title" [(ngModel)]="event.title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Description" [(ngModel)]="event.desc"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Start</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>End</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>All Day?</ion-label>
+        <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
+      </ion-item>
+      <ion-button fill="outline" expand="block" (click)="addEvents()">Add Event</ion-button>
+ 
+    </ion-card-content>
+  </ion-card>-->
+
+  <!-- <ion-row>
+    <ion-col size="4">
+      <ion-button expand="block" [color]="calendar.mode == 'month' ? 'primary' : 'secondary'" (click)="changeMode('month')">Month</ion-button>
+    </ion-col>
+    <ion-col size="4">
+      <ion-button expand="block" [color]="calendar.mode == 'week' ? 'primary' : 'secondary'" (click)="changeMode('week')">Week</ion-button>
+    </ion-col>
+    <ion-col size="4">
+      <ion-button expand="block" [color]="calendar.mode == 'day' ? 'primary' : 'secondary'" (click)="changeMode('day')">Day</ion-button>
+    </ion-col>
+  </ion-row>  -->
+  <div class="shadow-2 cal-content">
+    <ion-row class="cal_header">
+
+      <ion-col col-lg-6 col-md-6 col-sm-12 col-12>
+        <!-- <div class="prop_heading">
+      <h1><b>Booking Slots</b></h1>
+    </div> -->
+
+
+        <div text-center class="scroller">
+          <!-- <h3 style="color: #7EBD2D;"><b>{{ title }}</b></h3> -->
+          <!-- <ion-select name="courses" placeholder="Courses" [(ngModel)]="courses" interface="popover" mode="ios"
+      (ionChange)="select(courses)">
+      <ion-option value='Tp-Pulteri'>Tp-Pulteri</ion-option>
+    </ion-select> -->
+          <ion-scroll scrollX="true" class="scroller">
+            <ion-row nowrap class="headerChip" class="scroller day-course">
+              <ion-chip tapable class="shadow-1" (click)="changeMode('day')"
+                [ngClass]="{active: viewClass == 'Day View'}">
+                <ion-label color="warning"><b>Today</b></ion-label>
+              </ion-chip>
+
+              <ion-chip tapable class="shadow-1" (click)="changeMode('week')"
+                [ngClass]="{active: viewClass == 'Week View'}">
+                <ion-label color="warning"><b>Week</b></ion-label>
+              </ion-chip>
+
+              <ion-chip tapable class="shadow-1" (click)="changeMode('month')"
+                [ngClass]="{active: viewClass == 'Month View'}">
+                <ion-label color="warning"><b>Month</b></ion-label>
+              </ion-chip>
+
+            </ion-row>
+          </ion-scroll>
+        </div>
+      </ion-col>
+      <!-- <ion-col col-lg-4 col-md-4 col-sm-4 col-4 class="today">
+      <div class="input-calendar">
+      <ion-input type="text" placeholder="Today"></ion-input>
+      </div>
+     
+        <button color="light" ion-button class="shadow-1" (click)="back()"><ion-icon name="arrow-back-outline"></ion-icon></button>
+        <button color="light" ion-button class="shadow-1" (click)="next()"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+     
+    </ion-col>
+    <ion-col col-lg-4 col-md-4 col-sm-4 col-4>
+      <h4 style="padding: 0;margin: 5px; color: #7EBD2D;"><b>{{ viewTitle }}</b></h4>
+    </ion-col> -->
+      <ion-col col-lg-6 col-md-6 col-sm-12 col-12 class="scroller">
+        <div text-center class="scroller">
+          <!-- <h3 style="color: #7EBD2D;"><b>Courses</b></h3> -->
+          <!-- <ion-select name="courses" placeholder="Courses" [(ngModel)]="courses" interface="popover" mode="ios"
+        (ionChange)="select(courses)">
+        <ion-option value='Tp-Pulteri'>Tp-Pulteri</ion-option>
+      </ion-select> -->
+          <ion-scroll scrollX="true" class="scroller">
+            <ion-row nowrap class="headerChip" class="scroller day-course">
+              <ion-chip tapable class="shadow-1" (click)="courseSelected('east')"
+                [ngClass]="{ active : course == 'east'}">
+                <ion-label color="secondary"><b>East Course</b></ion-label>
+              </ion-chip>
+
+              <ion-chip tapable class="shadow-1" (click)="courseSelected('west')"
+                [ngClass]="{ active : course == 'west'}">
+                <ion-label color="secondary"><b>West Course</b></ion-label>
+              </ion-chip>
+
+              <ion-chip tapable class="shadow-1" (click)="courseSelected('north')"
+                [ngClass]="{ active : course == 'north'}">
+                <ion-label color="secondary"><b>North Course</b></ion-label>
+              </ion-chip>
+
+            </ion-row>
+          </ion-scroll>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <!-- <ion-col col-lg-5 col-md-5 col-sm-12 col-12 text-center>
+      <div class="content_select" text-center>
+      <ion-select placeholder="Day" [(ngModel)]="duration" interface="popover" mode="ios">
+      <ion-option value='day' (ionSelect)="changeMode('day')">Day View
+         <ion-icon name="today-outline"></ion-icon>
+        </ion-option>
+      <ion-option value='week' (ionSelect)="changeMode('week')">Week View
+        <ion-icon name="calendar-outline"></ion-icon>
+      </ion-option>
+      <ion-option value='month' (ionSelect)="changeMode('month')">Month View
+        <ion-icon name="calendar"></ion-icon>
+      </ion-option>
+    </ion-select>
+  </div>
+      </ion-col> -->
+      <ion-col col-lg-2 col-md-2 col-sm-2 col-2>
+        <div>
+          <button color="light" ion-button class="shadow-1" (click)="back()">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </button>
+        </div>
+      </ion-col>
+      <ion-col col-lg-4 col-md-4 col-sm-4 col-8 text-center>
+        <div>
+          <h4 style="color: #7EBD2D; margin: 15px 0 0 0;"><b>{{ viewTitle }}</b></h4>
+        </div>
+      </ion-col>
+      <ion-col col-lg-2 col-md-2 col-sm-2 col-2>
+        <div float-right>
+          <button color="light" ion-button class="shadow-1" (click)="next()">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </button>
+        </div>
+      </ion-col>
+      <ion-col col-lg-4 col-md-4 col-sm-4 col-12>
+        <div class="shadow-3 slotSeacrhbar">
+          <ion-searchbar [showCancelButton]="shouldShowCancel" (ionInput)="searchList($event.target.value)"
+            [(ngModel)]="search" (ionCancel)="onCancel($event)"></ion-searchbar>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-lg-9 col-md-9 col-sm-9 col-8 class="scroller" *ngIf="viewClass == ''"
+        [ngClass]="{ daytime : viewClass == 'Day View'}">
+        <div text-center class="scroller">
+          <!-- <ion-select name="courses" placeholder="Courses" [(ngModel)]="courses" interface="popover" mode="ios"
+        (ionChange)="select(courses)">
+        <ion-option value='Tp-Pulteri'>Tp-Pulteri</ion-option>
+      </ion-select> -->
+          <ion-scroll scrollX="true" class="scroller">
+            <ion-row nowrap class="headerChip" class="scroller day-course">
+              <ion-chip tapable class="shadow-1 dayChip1" (click)="option('book')"
+                [ngClass]="{ active : title == 'Booked Slots'}">
+                <ion-label color="secondary">Book</ion-label>
+              </ion-chip>
+
+              <ion-chip tapable class="shadow-1 dayChip2" (click)="option('player')"
+                [ngClass]="{ active : title == 'Selected Players'}">
+                <ion-label color="warning"><b>SelectPlayers</b></ion-label>
+              </ion-chip>
+
+              <ion-chip tapable class="shadow-1 dayChip3" (click)="option('option')"
+                [ngClass]="{ active : title == 'Player Option'}">
+                <ion-label color="success"><b>SetOptions</b></ion-label>
+              </ion-chip>
+
+              <ion-chip tapable class="shadow-1 dayChip4" (click)="option('caddies')"
+                [ngClass]="{ active : title == 'Caddies'}">
+                <ion-label color="medium"><b>Caddies</b></ion-label>
+              </ion-chip>
+              <ion-chip tapable class="shadow-1 dayChip4" (click)="option('buggies')"
+                [ngClass]="{ active : title == 'Buggies'}">
+                <ion-label color="danger"><b>Buggies</b></ion-label>
+              </ion-chip>
+            </ion-row>
+          </ion-scroll>
+        </div>
+      </ion-col>
+      
+    </ion-row>
+    <!-- <div class="shadow-3" style="padding: 2px 0;" text-center>
+      <p style="font-size: 18px;color: orange;"><b>{{courseTitle}}</b></p>
+    </div> -->
+    <div padding *ngIf="filteredEvents.length > 0 && search != ''">
+      <ion-item *ngFor="let item of filteredEvents" (click)="onSelect()" >
+        <ion-label>{{item.title}}</ion-label>
+      </ion-item>
+    </div>
+  </div>
+<ion-row>
+  <ion-col style="width: 50% !important">
+    <div [ngClass]="{ hidetable : calendar.mode != 'day'}" text-center class="bg-white"><p><b><ion-note color="secondary">Morning Booking Status </ion-note></b></p></div>
+    <div class="shadow-3 cale scroller" style="height: 600px !important; overflow-y: scroll;">
+      <calendar [eventSource]="eventSource" [calendarMode]="calendar.mode" [dateFormatter]="calendarDates.dateFormatter"
+        [monthviewDisplayEventTemplate]="template" [dayviewDisplayEventTemplate]="template" [weekviewDisplayEventTemplate]="template"
+         startHour="7" [timeInterval]="10"  endHour="10" [currentDate]="calendar.currentDate" (ionSlideDidChange)="slideChanged()"
+        (onTitleChanged)="onViewTitleChanged($event)" (onEventSelected)="onEventSelected($event)" (onTimeSelected)="onTimeSelected($event, 'true')">
+      </calendar>
+    </div>
+  </ion-col>
+  <ion-col  [ngClass]="{ hidetable : calendar.mode != 'day'}" style="width: 50% !important">
+   <div text-center><p><b><ion-note color="warning">Afternoon Booking Status</ion-note></b></p></div>
+    <div class="shadow-3 cale scroller" style="height: 600px !important; overflow-y: scroll;">
+      <calendar id="cal" [eventSource]="eventSource" [calendarMode]="calendar.mode" [dateFormatter]="calendarDatesweeks.dateFormatter"
+        [monthviewDisplayEventTemplate]="template" [dayviewDisplayEventTemplate]="template" [weekviewDisplayEventTemplate]="template"
+         startHour="13" [timeInterval]="10"  endHour="17" [currentDate]="calendar.currentDate"
+        (onTitleChanged)="onViewTitleChanged($event)" (onTimeSelected)="onTimeSelected($event, 'true')">
+      </calendar>
+    </div>
+  </ion-col>
+</ion-row>
+
+ <ng-template #daytemplate let-displayEvent="displayEvent" class="shadow-1">
+    <div class="calendar-event-inner">{{ displayEvent.event.title }}</div>
+ </ng-template>
+
+  <ng-template #template let-view="view" let-row="row" let-col="col" class="shadow-1">
+    <div [class.with-event]="view.dates[row*7+col].events.length">
+      {{view.dates[row*7+col].label}}
+      <div class="indicator-container">
+        <div class="event-indicator" *ngFor="let e of view.dates[row*7+col].events" text-center>
+          <span [ngClass]="e.title == 'Sold Out' ? 'sold_out' : 'slot_in' ">{{e.title}}</span>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- <ng-template #template let-viewDate="viewDate"> 
+    <div class="custom-day-header"> {{ viewDate.dayHeader }} </div> 
+</ng-template> -->
+
+  <div style="height: 50px !important;"></div>
+
+</ion-content>

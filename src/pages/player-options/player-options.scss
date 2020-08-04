@@ -1,0 +1,38 @@
+.logo {
+    height: 50px;
+    img {
+      position: relative;
+      border-radius: 50%;
+      top: 10px;
+      left: -48px;
+    }
+    ion-title {
+      position: relative;
+      top: -38px;
+      left: 28px;
+      font-size: 24px;
+    }
+    ion-note{
+      font-size: 24px !important;
+    }
+  }
+  .toolbar-title-ios, .toolbar-title-md {
+    font-size: 2.4rem;
+  }
+  ion-content{
+      .tee-time{
+        background: #E3F7DC ;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        img{
+            border-radius: 50%;
+          }
+        .help{
+            width: 20px;
+            height: 20px;
+            background: rgb(116, 114, 114);
+            border-radius: 50%;
+            color: whitesmoke;
+          }
+      }
+}

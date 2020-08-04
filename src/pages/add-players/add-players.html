@@ -1,0 +1,131 @@
+<!--
+  Generated template for the AddPlayersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <ion-toolbar class="shadow-3">
+    <div class="logo" text-center>
+      <img src="assets/logo.jpeg" width="40px" height="40px">
+      <ion-title color="dark"><b>my<ion-note color="primary">Golf</ion-note>2u</b></ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <ion-row text-center class="tee-time shadow-2">
+      <ion-col col-3 col-sm-2 col-md-3 col-lg-3>
+        <ion-item no-lines text-center class="tee-time">
+          <img src="assets/logo.jpeg" width="40px" height="40px" />
+        </ion-item>
+      </ion-col>
+      <ion-col col-7 col-sm-8 col-md-6 col-lg-6>
+        <ion-item no-lines text-center class="tee-time">
+          <ion-label color="dark"><b>PLAYERS</b></ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col col-2 col-sm-2 col-md-3 col-lg-3>
+        <ion-item no-lines text-center class="tee-time">
+          <div class="help">
+            <ion-icon name="checkmark"></ion-icon>
+          </div>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <div padding-vertical>
+      <ion-row>
+        <ion-col col-lg-4 col-md-6 col-sm-12 col-12>
+          <ion-card  class="item-card">
+            <ion-col col-lg-3 col-md-3 col-sm-2 col-3>
+              <div class="img" float-right>
+                <img src="assets/imgs/avt2.jpg">
+              </div>
+            </ion-col>
+            <ion-col col-lg-9 col-md-9 col-sm-10 col-9>
+              <ion-item no-lines>
+                <ion-label padding-left color="success">Fazel NahgShineh (# 11)
+                  <p>No Promotion</p>
+                </ion-label>
+                <ion-icon item-right color="danger" name="close"></ion-icon>
+              </ion-item>
+            </ion-col>
+          </ion-card>
+        </ion-col>
+        <ion-col col-lg-4 col-md-6 col-sm-12 col-12>
+          <ion-card  class="item-card">
+            <ion-col col-lg-3 col-md-3 col-sm-2 col-3>
+              <div class="img" float-right>
+                <img src="assets/imgs/avt4.jpg">
+              </div>
+            </ion-col>
+            <ion-col col-lg-9 col-md-9 col-sm-10 col-9>
+              <ion-item no-lines>
+                <ion-label padding-left color="success">John wick (# 13)
+                  <p>Tap for more Options</p>
+                </ion-label>
+                <ion-icon item-right color="danger" name="close"></ion-icon>
+              </ion-item>
+            </ion-col>
+          </ion-card>
+        </ion-col>
+        <ion-col col-lg-4 col-md-6 col-sm-12 col-12>
+          <ion-card  class="item-card">
+            <ion-col col-lg-3 col-md-3 col-sm-2 col-3>
+              <div class="img" float-right>
+                <img src="assets/imgs/avt7.jpg">
+              </div>
+            </ion-col>
+            <ion-col col-lg-9 col-md-9 col-sm-10 col-9>
+              <ion-item no-lines>
+                <ion-label padding-left color="success">Tom Cruise (# 14)
+                  <p>Tap for more Options</p>
+                </ion-label>
+                <ion-icon item-right color="danger" name="close"></ion-icon>
+              </ion-item>
+            </ion-col>
+          </ion-card>
+        </ion-col>
+        <ion-col col-lg-4 col-md-6 col-sm-12 col-12>
+          <ion-card  class="item-card">
+            <ion-col col-lg-3 col-md-3 col-sm-2 col-3>
+              <div class="img" float-right>
+                <img src="assets/imgs/avt6.jpg" width="65px" height="65px">
+              </div>
+            </ion-col>
+            <ion-col col-lg-9 col-md-9 col-sm-10 col-9>
+              <ion-item no-lines tappable (click)="collapseCard = !collapseCard">
+                <ion-label padding-left color="success">{{ playerName ? playerName: 'Tap here to Add Member' }}
+                  <p *ngIf="playerName">No Promotion</p>
+                </ion-label>
+                <ion-icon item-right color="{{collapseCard? 'danger': secondary}}" name="close" *ngIf="collapseCard"></ion-icon>
+                <ion-icon item-right color="secondary" name="add" *ngIf="!collapseCard"></ion-icon>
+              </ion-item>
+              <div *ngIf="collapseCard">
+                <ion-row>
+                  <ion-col col-6>
+                    <ion-input placeholder="Club M/Ship no." [(ngModel)]="playerName"></ion-input>
+                  </ion-col>
+                  <ion-col col-4>
+                    <ion-input placeholder="mg2u ID" [(ngModel)]="mg2uId"></ion-input>
+                  </ion-col>
+                  <ion-col col-2>
+                    <ion-icon style="margin-top: 20px;" color="danger" name="close"></ion-icon>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </ion-col>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <div class="add_me" text-center>
+        <button ion-button round color="secondary" class="shadow-3" (click)="collapseCard = !collapseCard">Add me</button>
+        <button ion-button round color="danger" class="shadow-3">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <div style="height: 60px;"></div>
+</ion-content>

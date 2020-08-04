@@ -1,0 +1,358 @@
+// ion-content{
+//     .content{
+//         border-radius: 12px;
+//         margin: 16px;
+//     }
+//   }
+page-bookings{
+  ion-row{
+    padding: 0 !important;
+    margin: 0 !important;
+    ion-col{
+      padding: 2px !important;
+      margin: 0 !important;
+    }
+  }
+  .item{
+    background: transparent;
+  }
+.caddies-icons{
+  margin: -10px 0 0 0;
+  ion-note{
+   position: relative;
+   top: -10px;
+  }
+}
+.title{
+  margin:10px 0px 0 30% !important; text-align: center;
+}
+.item-logo{
+    background: transparent !important;
+.logo {
+    height: 50px;
+    img {
+      position: relative;
+      border-radius: 50%;
+      top: 10px;
+      left: -48px;
+    }
+    ion-title {
+      position: relative;
+      top: -38px;
+      left: 28px;
+      font-size: 24px;
+    }
+    ion-note{
+      font-size: 24px !important;
+    }
+  }
+}
+  .toolbar-title-ios, .toolbar-title-md {
+    font-size: 2.4rem;
+  }
+  
+  .scroll-content {
+    padding: 0 !important;
+  }
+  ion-content{
+    --background: #E3F7DC ;
+      .booking-content{
+        background: #E3F7DC ;
+        border-radius: 12px;
+        //  ;
+        ion-item{
+          background: transparent;
+        }
+      }
+      .main-content{
+        border-radius: 12px;
+        transition: all .5s ease-in-out;
+        .tee-time{
+          background: #E3F7DC ;
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
+          img{
+              border-radius: 50%;
+            }
+          .help{
+              width: 20px;
+              height: 20px;
+              background: red;
+              border-radius: 50%;
+              color: whitesmoke;
+            }
+        }
+        &:hover {
+          // transform: scale(1.01);
+          //   // background-color: rgb(248, 248, 252);
+          //   background-color: #fbfcfa;
+            
+        }
+      }
+      .input{
+      //   width: calc(100%-100px) !important;
+      border-bottom: 1px solid #dedede;
+      }
+      ion-input{
+        margin: 10px 0 0px -2px !important;
+        border-bottom: 1px solid #dedede;
+      }
+      .text-input-ios, .text-input-md{
+        margin: 11px 8px 11px 6px;
+        padding: 0;
+        width: calc(100% - 8px);
+      }
+     ion-icon{
+       position: relative;
+       top: 2px;
+       font-size: 20px;
+       font-weight: 800;
+     }
+    
+     ion-segment{
+       ion-icon{
+        margin: -5px 0 0 0;
+       }
+     }
+     .book_now{
+       color: #000;
+       font-weight: 400;
+     }
+    }
+    .book{
+      height: 60px;
+  }
+
+  .basic_detail{
+    color:#000;
+    height: 30px;
+    width: 30%;
+    text-align: center;
+    cursor: pointer;
+    background-color:  #E3F7DC;
+    position: relative; top: -16px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+  .basic_detail-buggie{
+    color:#000;
+    height: 30px;
+    width: 30%;
+    text-align: center;
+    cursor: pointer;
+    background-color: #E3F7DC;
+    position: relative; top: -16px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+   .booking_pricing{
+     margin: -170px 0 0 0 !important;
+   }
+  .main-content-buggies{
+    border-radius: 12px;
+    transition: all .5s ease-in-out;
+    &:hover {
+    
+  }
+  }
+  .player_icon_set{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    .player_icon_search{
+      margin:0px 0px 0 -4px;
+    }
+     
+  }
+  
+  .player_icon_close{
+    margin: 15px 0px 0 0px;
+  }
+  .player_golf_holes{
+    padding: 16px;
+  }
+  .golf_holes_count{
+    padding: 16px;
+   }
+   .players_count{
+     padding: 8px 16px;
+   }
+   .books_someone{
+     padding: 0px 16px 16px 16px;
+   }
+  .add_member{
+    margin: -40px 0 0 0;
+    border-radius: 12px;
+  }
+  .see_package {
+    padding: 20px 0;
+  }
+  .img_caddies{
+    width: 100%;
+    img{
+      margin-top: 20px;
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+  .img_players{
+    width: 70%;
+    img{
+      width: 75%;
+      border-radius: 50%;
+    }
+  }
+  .img_booking{
+    width: 100%;
+    img{
+      width: 75%;
+      border-radius: 50%;
+    }
+  }
+  .players_content{
+    padding: 0 16px;
+  }
+  .animate{
+    animation: blob 1s ease-in-out infinite;
+   } 
+  @keyframes blob {
+    0%{
+      transform: scale(1);
+    }
+    50%{
+      transform: scale(1.03);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
+  @media screen and(min-width:578px) and (max-width:768px){
+    .img_caddies{
+      width: 60% !important;
+      img{
+        width: 100% !important;
+        border-radius: 50%;
+      }
+    }
+    .img_players{
+      width: 70% !important;
+      img{
+        width: 100% !important;
+        border-radius: 50%;
+      }
+    }
+    .img_booking{
+      width: 70% !important;
+      img{
+        width: 100% !important;
+        border-radius: 50%;
+      }
+    }
+  }
+  @media screen and (max-width:567px){
+    .img_caddies{
+      width: 100% !important;
+      img{
+        width: 100% !important;
+        border-radius: 50%;
+      }
+    }
+    .img_players{
+      width: 100% !important;
+      img{
+        width: 100% !important;
+        border-radius: 50%;
+      }
+    }
+    .img_booking{
+      width: 100% !important;
+      img{
+        width: 100% !important;
+        border-radius: 50%;
+      }
+    }
+  }
+  
+    @media screen and (max-width:350px){
+        .book{
+            height: 60px;
+        }
+        .title{
+          margin:10px 0px 0 0 !important; text-align: center;
+        }
+    }
+    @media screen and (max-width:767px){
+      .title{
+        margin:10px 0px 0 5% !important; text-align: center;
+      }
+      .img{
+        width: 100%;
+      }
+      .player_golf_holes{
+        padding: 16px 10px;
+      }
+      .players_content{
+        padding: 0;
+      }
+      .basic_detail{
+        width: 50%;
+      }
+      .basic_detail-buggie{
+        width: 50%;
+      }
+      .add_member{
+        margin: 0;
+        border-radius: 12px;
+      }
+      .golf_holes_count{
+       padding: 6px;
+      }
+      .players_count{
+        padding: 6px 10px;
+      }
+      .books_someone{
+        padding: 6px 10px;
+      }
+  }
+  
+  @media screen and (max-width:767px){
+    .player_icon_set{
+      display: flex; 
+      flex-direction: row; 
+      justify-content: space-between;
+      .player_icon_search{
+        margin:15px 0px 0 -10px;
+      }  
+    }
+    .player_icon_close{
+      margin: 15px -12px 0 0px !important;
+    }
+ }
+  @media screen and (max-width:992px){
+   .booking_pricing{
+     margin: 0 0 0 0 !important;
+   }
+}
+@media screen and(min-width:1450px) and (max-width:1868px){
+  .booking_pricing{
+    margin: -50px 0 0 0 !important;
+  }
+}
+@media screen and (min-width:1868px){
+  .booking_pricing{
+    margin: 0 0 0 0 !important;
+  }
+}
+    @media screen and (min-width:768px) and (max-width:971px){
+      .basic_detail{
+        width: 50%;
+      }
+      .basic_detail-buggie{
+        width: 50%;
+      }
+      .add_member{
+        margin: -50px 0 0 0;
+        border-radius: 12px;
+      }
+  }
+  }

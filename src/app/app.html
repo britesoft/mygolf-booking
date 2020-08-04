@@ -1,0 +1,37 @@
+<ion-nav [root]="rootPage"></ion-nav>
+<!-- footer for Root components -->
+<ion-footer>
+    <ion-row>
+        <ion-col col-2 text-center>
+            <ion-button (click)="openPage('chartPage')">
+                <ion-icon name="pie"></ion-icon>
+            </ion-button>
+        </ion-col>
+        <ion-col col-3 text-center>
+            <ion-button (click)="openPage('BookingsPage')">
+                <ion-icon name="notifications"></ion-icon>
+            </ion-button>
+        </ion-col>
+        <ion-col col-2></ion-col>
+        <ion-col col-3 text-center>
+            <ion-button (click)="openPage('PaymentPage')">
+                <ion-icon name="settings"></ion-icon>
+            </ion-button>
+        </ion-col>
+        <ion-col col-2 text-center>
+            <ion-button (click)="openPage('PicklistPage')">
+                <ion-icon name="person"></ion-icon>
+            </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-footer>
+
+<!-- Design home-menu (Footer) -->
+<div class="menu">
+    <img src="assets/bottom-menu1.svg">
+</div>
+<ion-fab bottom center (click)="openPage('HomePage')">
+    <ion-fab-button size="large" ion-fab>
+        <img src="assets/logo.jpeg" width="47px" height="47px">
+    </ion-fab-button>
+</ion-fab>

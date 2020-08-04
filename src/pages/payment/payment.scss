@@ -1,0 +1,84 @@
+page-payment{
+ion-toolbar{
+  ion-icon{
+    font-size: 25px;
+    position: absolute;
+    left: 15px;
+    top: 18px;
+  }
+}
+}
+.logo {
+  height: 50px;
+  img {
+    position: relative;
+    border-radius: 50%;
+    top: 10px;
+    left: -48px;
+  }
+  ion-title {
+    position: relative;
+    top: -38px;
+    left: 28px;
+    font-size: 24px;
+  }
+  ion-note{
+    font-size: 24px !important;
+  }
+}
+.toolbar-title-ios, .toolbar-title-md {
+  font-size: 2.4rem;
+}
+ion-content{
+    .main-content{
+      border-radius: 12px;
+    //   border: 2px solid #70ac77;
+    ion-row{
+      ion-col{
+        margin: 0;
+        padding: 0;
+        ion-item{
+          img {
+            margin: 10px 10px 0 0 !important;
+          }
+        }
+        .item-ios,.item-md{
+          margin: 0;
+        }
+      }
+    }
+    
+      .payment{
+        background:rgba(255, 175, 64,1.0);
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        img{
+          border-radius: 50%;
+        }
+        .help{
+          width: 20px;
+          height: 20px;
+          background: red;
+          border-radius: 50%;
+          color: whitesmoke;
+        }
+      }
+    }
+    
+   ion-icon{
+     position: relative;
+     top: 2px;
+     font-size: 20px;
+     font-weight: 800;
+   }
+  
+   ion-segment{
+     ion-icon{
+      margin: -5px 0 0 0;
+     }
+   }
+   .book_now{
+     color: #000;
+     font-weight: 400;
+   }
+  }
